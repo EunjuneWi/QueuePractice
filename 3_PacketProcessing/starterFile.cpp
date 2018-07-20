@@ -1,3 +1,15 @@
+/*
+* FILE			: starterFile.cpp
+* PROJECT		: Coursera.Datastructure - Network packet processing simulation
+* PROGRAMMER	: Eunjune Wi
+* FIRST VERSION	: 2018-07-19
+* DESCRIPTION	:
+*	This file contains starter file for the project. It was provided by Coursera.
+*/
+
+
+
+/*
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -30,60 +42,7 @@ public:
 	{}
 
 	Response Process(const Request &request) {
-		
-
-		Response result(true, -1);		// By default, result will be dropping packet
-
-										// 1. If packet arrives, check whether previous packet has been processed.
-										//		If it is, element in [finish_time_] should be popped.
-		while ((!this->finish_time_.empty()) &&
-			(this->finish_time_.front() <= request.arrival_time))
-		{
-			this->finish_time_.pop();
-		}
-
-		// 2. Check whether [finish_time_] is full, drop the packet
-		if (this->finish_time_.size() == this->size_)
-		{
-			result.dropped = true;		// This is not necessary, but written for readability
-			result.start_time = -1;
-		}
-		// 3. If [finish_time_] is available, there are two things to do
-		//		a) push the newly arrived packet to the buffer
-		//		b) return the result of the packet
-		else
-		{
-			// Set the result of the packet
-			result.dropped = false;
-			if (this->finish_time_.empty())
-			{
-				result.start_time = request.arrival_time;
-			}
-			else
-			{
-				result.start_time = this->finish_time_.back();
-			}
-
-			// Push the packet to the buffer
-			int newFinishTime = -1;
-
-			if (this->finish_time_.empty())
-			{
-				newFinishTime = request.arrival_time + request.process_time;
-			}
-			else
-			{
-				int lastFinishTime = this->finish_time_.back();
-				newFinishTime = lastFinishTime + request.process_time;
-			}
-
-			this->finish_time_.push(newFinishTime);
-		}
-
-
-		return result;
-
-
+		// write your code here
 	}
 private:
 	int size_;
@@ -125,3 +84,4 @@ int main() {
 	PrintResponses(responses);
 	return 0;
 }
+*/
